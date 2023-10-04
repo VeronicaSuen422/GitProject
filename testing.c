@@ -26,11 +26,12 @@ int main() {
 
    do {
 
-      fflush(stdin);
-
       // User input
-      printf("p for Paper\nv for Scissors\ns for Stone\nWhat is your input? ");
-      scanf("%c", &user);
+      do {
+         fflush(stdin);
+         printf("p for Paper\nv for Scissors\ns for Stone\nWhat is your input? ");
+         scanf("%c", &user);
+      } while (!((user == 'p' || user == 'v') || user == 's'));
 
       // Generate computer's input
       srand(time(NULL));
