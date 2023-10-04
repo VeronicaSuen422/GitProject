@@ -57,8 +57,12 @@ int main() {
       }
 
       // Ask for Replay
-      printf("y for Yes\nn for No\nDo you want to play again? ");
-      scanf("%s", &tryagain);
+      do {
+         fflush(stdin);
+         printf("y for Yes\nn for No\nDo you want to play again? ");
+         scanf("%s", &tryagain);
+      } while (!(tryagain == 'y' || tryagain == 'n'));
+      
    } while (tryagain == 'y');
 
    return 0;
