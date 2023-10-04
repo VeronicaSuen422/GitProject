@@ -23,20 +23,23 @@ int main() {
    char result; // Store the result
    int n; // Store the random number used for computer's input
 
+   // User input
+   printf("p for Paper\nv for Scissors\ns for Stone\nWhat is your input? ");
+   scanf("%c", &user);
+
    // Generate computer's input
    srand(time(NULL));
    n = rand() % 100;
    if (n < 33) {
       computer = 'p'; // Paper
+      printf("Computer input is Paper\n");
    } else if (n >= 33 && n < 66) {
       computer = 'v'; // Scissors
+      printf("Computer input is Scissors\n");
    } else {
       computer = 's'; // Stone
+      printf("Computer input is Stone\n");
    }
-
-   // User input
-   printf("p for Paper\nv for Scissors\ns for Stone\nWhat is your input? ");
-   scanf("%c", &user);
 
    // Show result
    result = gameplay(user, computer);
@@ -47,6 +50,6 @@ int main() {
    } else {
       printf("Draw");
    }
-
+   
    return 0;
 }
